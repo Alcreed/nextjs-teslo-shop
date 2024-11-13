@@ -1,7 +1,11 @@
-export default function ShopLayout({
+export default function LoginLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="min-h-screen bg-gray-500">{children}</div>;
+  return (
+    <main className="flex justify-center">
+      <div className="w-full sm:w-[300px] px-10">{children}</div>
+    </main>
+  );
 }
