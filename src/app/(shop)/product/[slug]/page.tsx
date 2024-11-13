@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 
-import { SizeSelector } from "@/components";
+import { QuantitySelector, SizeSelector } from "@/components";
 
 interface Props {
   params: {
@@ -37,6 +37,7 @@ export default function ProductPage({ params }: Props) {
         <SizeSelector selectedSize={product.sizes[0]} availableSizes={product.sizes} />
 
         {/** Selector de cantidad */}
+        <QuantitySelector quantity={2} />
 
         {/** Button */}
         <button className="btn-primary my-5">Agregar al carrito</button>
