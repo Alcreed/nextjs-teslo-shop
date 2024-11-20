@@ -1,5 +1,5 @@
 services:
-  postgres-db:
+  teslo-shop:
     image: postgres:15.3
     restart: always
     environment:
