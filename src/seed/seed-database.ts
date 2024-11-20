@@ -1,4 +1,5 @@
 import prisma from "../lib/prisma";
+import { initialData } from "./seed";
 
 async function main() {
   // 1. Borrar registros previos
@@ -7,6 +8,17 @@ async function main() {
     prisma.product.deleteMany(),
     prisma.category.deleteMany(),
   ]);
+
+  const { categories, products } = initialData;
+
+  // 2. Insertar categorías
+  const categoriesData = categories.map((category) => ({
+    name: category,
+  }));
+
+  await prisma.category.createMany({
+    data: categoriesData,
+  });
 
   console.log("Seed ejecutado correctamente");
 }
