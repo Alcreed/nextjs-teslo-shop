@@ -1,8 +1,11 @@
-// import { notFound } from "next/navigation";
+export const revalidate = 60; // 60 segundos
+
 import { redirect } from "next/navigation";
-import { getPaginatedProductsWithImages } from "@/actions";
-import { Pagination, ProductGrid, Title } from "@/components";
 import { Gender } from "@prisma/client";
+
+import { getPaginatedProductsWithImages } from "@/actions";
+
+import { Pagination, ProductGrid, Title } from "@/components";
 
 interface Props {
   params: {
